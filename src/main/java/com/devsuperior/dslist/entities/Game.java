@@ -5,6 +5,7 @@ import java.util.Objects;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -13,28 +14,34 @@ import jakarta.persistence.Table;
 public class Game {
     
     @Id // configurando o id como chave primaria do database
-    @GeneratedValue // declara que é um autoincrement
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // declara que é um autoincrement
     private Long id;
     private String title;
 
     @Column(name = "game_year") // customizando nome do atributo year no banco
     private Integer year; // year é palavra reservada no SQL.
     private String genre;
-    private String plataform;
+    private String platforms;
     private String imgUrl;
+    private Double score;
+
+    @Column(columnDefinition = "TEXT") // customizando a string para o tipo text do SQL.
     private String shortDescription;
+
+    @Column(columnDefinition = "TEXT")
     private String LongDescription;
     
     public Game() {
     }
 
-    public Game(Long id, String title, Integer year, String genre, String plataform, String imgUrl,
+    public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
             String shortDescription, String longDescription) {
         this.id = id;
         this.title = title;
         this.year = year;
         this.genre = genre;
-        this.plataform = plataform;
+        this.platforms = platforms;
+        this.score = score;
         this.imgUrl = imgUrl;
         this.shortDescription = shortDescription;
         LongDescription = longDescription;
@@ -72,12 +79,20 @@ public class Game {
         this.genre = genre;
     }
 
-    public String getPlataform() {
-        return plataform;
+    public String getPlataforms() {
+        return platforms;
     }
 
-    public void setPlataform(String plataform) {
-        this.plataform = plataform;
+    public void setPlataforms(String platforms) {
+        this.platforms = platforms;
+    }
+
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
     }
 
     public String getImgUrl() {
