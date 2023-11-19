@@ -15,12 +15,10 @@ public class GameListDTO {
     }
 
     public Long getId() {
-        System.out.println(id);
         return id;
     }
 
     public String getName() {
-        System.out.println(name);
         return name;
     }
     
