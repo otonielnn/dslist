@@ -22,8 +22,9 @@ public class Game {
     private Integer year; // year é palavra reservada no SQL.
     private String genre;
     private String platforms;
-    private String imgUrl;
+
     private Double score;
+    private String imgUrl;
 
     @Column(columnDefinition = "TEXT") // customizando a string para o tipo text do SQL.
     private String shortDescription;
@@ -44,7 +45,7 @@ public class Game {
         this.score = score;
         this.imgUrl = imgUrl;
         this.shortDescription = shortDescription;
-        LongDescription = longDescription;
+        this.LongDescription = longDescription;
     }
 
     public Long getId() {
@@ -79,11 +80,11 @@ public class Game {
         this.genre = genre;
     }
 
-    public String getPlataforms() {
+    public String getPlatforms() {
         return platforms;
     }
 
-    public void setPlataforms(String platforms) {
+    public void setPlatforms(String platforms) {
         this.platforms = platforms;
     }
 
@@ -116,7 +117,7 @@ public class Game {
     }
 
     public void setLongDescription(String longDescription) {
-        LongDescription = longDescription;
+        this.LongDescription = longDescription;
     }
 
     @Override

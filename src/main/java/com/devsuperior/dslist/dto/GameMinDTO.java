@@ -8,7 +8,7 @@ public class GameMinDTO {
     private Integer year;
     private String imgUrl;
     private String shortDescription;
-    private String longDescription;
+    private String LongDescription;
 
     public GameMinDTO() {
     }
@@ -19,6 +19,7 @@ public class GameMinDTO {
         this.year = entity.getYear();
         this.imgUrl = entity.getImgUrl();
         this.shortDescription = entity.getShortDescription();
+        this.LongDescription = entity.getLongDescription();
     }
 
     public Long getId() {
@@ -42,6 +43,6 @@ public class GameMinDTO {
     }
 
     public String getLongDescription() {
-        return longDescription;
+        return LongDescription;
     }
 }
